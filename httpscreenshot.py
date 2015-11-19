@@ -201,6 +201,8 @@ def worker(urlQueue, tout, debug, headless, doProfile, vhosts, subs, extraHosts,
 				continue
 			print '[+] '+str(urlQueue.qsize())+' URLs remaining'
 			screenshotName = quote(curUrl[0], safe='')
+			#removes the http part of the name that gets saved
+			screenshotName = screenshotName[13:]
 			if(debug):
 				print '[+] Got URL: '+curUrl[0]
 				print '[+] screenshotName: '+screenshotName
